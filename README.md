@@ -16,12 +16,11 @@ Steps to run this code
 
 Run the app using
 ```bash
-cd SquareShift
 python main.py
 ```
 
 Potential output:
-```
+```json
 {
   "user_input": "I need to hire a founding engineer and a GenAI intern. Can you help?",
   "memory": {
@@ -45,3 +44,4 @@ Potential output:
   }
 }
 ```
+
