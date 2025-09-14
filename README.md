@@ -10,14 +10,15 @@ Steps to run this code
   ```bash
   pip install langgraph pydantic
   ```
-3. if you plan to replace template logic with real LLM calls Install
+3. If you plan to replace template logic with real LLM calls Install
  `pip install openai`
 
 
-Run the app using
+Run the app 
 ```bash
-python main.py
+python main.py --session `session_name`
 ```
+Default session name is `default`. 
 
 Potential output:
 ```json
@@ -44,4 +45,5 @@ Potential output:
   }
 }
 ```
+
 
