@@ -28,6 +28,8 @@ def save_session(session_id: str, mem: Memory, result: dict):
 def parse_answer(question: str, answer: str):
     q = question.lower()
     a = answer.strip()
+    if "remote" in q or "location" in q:
+        return ("location", a)
     if "roles" in q:
         return ("roles", [r.strip() for r in a.split(",") if r.strip()])
     if "budget" in q:
@@ -39,8 +41,6 @@ def parse_answer(question: str, answer: str):
     if "time" in q or "week" in q:
         digits = "".join(ch for ch in a if ch.isdigit())
         return ("timeline_weeks", int(digits)) if digits else ("timeline_weeks", a)
-    if "remote" in q or "location" in q:
-        return ("location", a)
     if "process" in q:
         return ("process_prefs", a)
     return (None, a)
